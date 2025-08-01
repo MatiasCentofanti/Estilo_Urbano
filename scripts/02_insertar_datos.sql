@@ -149,3 +149,32 @@ VALUES
 UPDATE Ventas
 SET ClienteID = ABS(CHECKSUM(NEWID()) % 10) + 1
 WHERE ClienteID IS NULL;
+
+INSERT INTO Empleados (Nombre, Rol) VALUES
+('Carlos Pérez', 'Vendedor'),
+('Laura Gómez', 'Cajera'),
+('Sofía Martínez', 'Vendedor'),
+('Marcos Díaz', 'Encargado'),
+('Romina Torres', 'Vendedor');
+
+INSERT INTO Vendedores (EmpleadoID) VALUES (1), (3), (5);
+
+update Ventas
+set EmpleadoID = 1
+where VentaID = 1;
+
+update Ventas
+set EmpleadoID = 3
+where VentaID in (2, 3, 4, 5, 6);
+
+update Ventas
+set EmpleadoID = 5
+where VentaID between 7 and 13;
+
+update Ventas
+set EmpleadoID = 1
+where VentaID between 14 and 18;
+
+update Ventas
+set EmpleadoID = 3
+where VentaID in (19, 20);
