@@ -31,3 +31,50 @@ CREATE TABLE DetalleVenta (
     FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID),
     FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
 );
+
+CREATE TABLE Clientes (
+    ClienteID INT PRIMARY KEY IDENTITY(1,1),
+    NombreCompleto VARCHAR(100),
+    Email VARCHAR(100),
+    Telefono VARCHAR(20),
+    Direccion VARCHAR(150)
+);
+
+ALTER TABLE Ventas ADD ClienteID INT FOREIGN KEY REFERENCES Clientes(ClienteID);
+
+CREATE TABLE Empleados (
+    EmpleadoID INT PRIMARY KEY IDENTITY(1,1),
+    Nombre VARCHAR(100),
+    Rol VARCHAR(50)
+);
+
+ALTER TABLE Ventas ADD EmpleadoID INT FOREIGN KEY REFERENCES Empleados(EmpleadoID);
+
+CREATE TABLE Roles (
+    RolID INT PRIMARY KEY IDENTITY(1,1),
+    NombreRol VARCHAR(50)
+);
+
+CREATE TABLE Usuarios (
+    UsuarioID INT PRIMARY KEY IDENTITY(1,1),
+    NombreUsuario VARCHAR(50),
+    PasswordHash VARCHAR(255),
+    RolID INT FOREIGN KEY REFERENCES Roles(RolID)
+);
+
+CREATE TABLE Proveedores (
+    ProveedorID INT PRIMARY KEY IDENTITY(1,1),
+    NombreProveedor VARCHAR(100),
+    Telefono VARCHAR(20),
+    Email VARCHAR(100)
+);
+
+ALTER TABLE Productos ADD ProveedorID INT FOREIGN KEY REFERENCES Proveedores(ProveedorID);
+
+CREATE TABLE HistorialPrecios (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    ProductoID INT FOREIGN KEY REFERENCES Productos(ProductoID),
+    PrecioAnterior DECIMAL(10,2),
+    PrecioNuevo DECIMAL(10,2),
+    FechaCambio DATETIME DEFAULT GETDATE()
+);
