@@ -1,5 +1,5 @@
 -- 04_trigger_actualizar_stock.sql
--- Trigger que actualiza el stock en Productos después de insertar un detalle de venta
+-- Trigger que actualiza el stock en Productos despuÃ©s de insertar un detalle de venta
 
 CREATE TRIGGER trg_ActualizarStock
 ON DetalleVenta
