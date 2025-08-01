@@ -44,3 +44,29 @@ BEGIN
     JOIN INSERTED i ON i.ProductoID = p.ProductoID;
 END;
 GO
+
+-- Trigger de auditoría en Productos
+CREATE TRIGGER trg_Auditoria_Productos
+ON Productos
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT * FROM inserted)
+    BEGIN
+        INSERT INTO AuditoriaCambios (TablaAfectada, Operacion, UsuarioSistema, RegistroAfectado)
+        SELECT 'Productos', 'INSERT/UPDATE', SYSTEM_USER,
+               CONCAT('ProductoID: ', ProductoID, ', Nombre: ', NombreProducto, ', Precio: ', Precio)
+        FROM inserted;
+    END
+
+    IF EXISTS (SELECT * FROM deleted)
+    BEGIN
+        INSERT INTO AuditoriaCambios (TablaAfectada, Operacion, UsuarioSistema, RegistroAfectado)
+        SELECT 'Productos', 'DELETE', SYSTEM_USER,
+               CONCAT('ProductoID: ', ProductoID, ', Nombre: ', NombreProducto, ', Precio: ', Precio)
+        FROM deleted;
+    END
+END;
+GO
