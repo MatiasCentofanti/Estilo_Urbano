@@ -83,3 +83,12 @@ CREATE TABLE Vendedores (
     VendedorID INT PRIMARY KEY IDENTITY(1,1),
     EmpleadoID INT UNIQUE FOREIGN KEY REFERENCES Empleados(EmpleadoID)
 );
+
+CREATE TABLE AuditoriaCambios (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    TablaAfectada VARCHAR(50),
+    Operacion VARCHAR(10),
+    FechaHora DATETIME DEFAULT GETDATE(),
+    UsuarioSistema VARCHAR(100),
+    RegistroAfectado VARCHAR(MAX)
+);
