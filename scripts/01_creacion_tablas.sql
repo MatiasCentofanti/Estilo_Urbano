@@ -78,3 +78,8 @@ CREATE TABLE HistorialPrecios (
     PrecioNuevo DECIMAL(10,2),
     FechaCambio DATETIME DEFAULT GETDATE()
 );
+
+CREATE TABLE Vendedores (
+    VendedorID INT PRIMARY KEY IDENTITY(1,1),
+    EmpleadoID INT UNIQUE FOREIGN KEY REFERENCES Empleados(EmpleadoID)
+);
