@@ -1,4 +1,4 @@
--- Trigger de auditoría en Productos (ejemplo)
+-- Trigger de auditorÃ­a en Productos
 CREATE TRIGGER trg_Auditoria_Productos
 ON Productos
 AFTER INSERT, UPDATE, DELETE
@@ -23,7 +23,7 @@ BEGIN
     END
 END;
 
--- Tabla de auditoría
+-- Tabla de auditorÃ­a
 CREATE TABLE AuditoriaCambios (
     ID INT PRIMARY KEY IDENTITY(1,1),
     TablaAfectada VARCHAR(50),
