@@ -191,3 +191,19 @@ VALUES
 ('Distribuidora UrbanStyle', '1144778899', 'urban@distristyle.com'),
 ('Camperas y Abrigos S.R.L.', '1122113344', 'ventas@camperasabrigos.com'),
 ('Todo Pantalones', '1177990022', 'contacto@todopantalones.com');
+
+update Productos
+set ProveedorID = 6
+where CategoriaID = 4;
+
+update Productos
+set ProveedorID = 9
+where CategoriaID = 3;
+
+update Productos
+set ProveedorID = 10
+where CategoriaID = 2;
+
+update Productos
+set ProveedorID = 1
+where CategoriaID = 1;
