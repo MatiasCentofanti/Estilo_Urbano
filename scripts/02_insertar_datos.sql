@@ -132,3 +132,20 @@ INSERT INTO DetalleVenta (VentaID, ProductoID, Cantidad, Subtotal) VALUES
 (18, 18, 1, 7900.00),
 (19, 19, 2, 12100.00),
 (20, 20, 1, 9900.00);
+
+INSERT INTO Clientes (NombreCompleto, Email, Telefono, Direccion)
+VALUES 
+('Lucía Fernández', 'lucia.fernandez@email.com', '1123456789', 'Av. Siempre Viva 123'),
+('Carlos Gómez', 'carlos.gomez@email.com', '1167894321', 'Calle Falsa 456'),
+('Mariana López', 'mariana.lopez@email.com', '1134567890', 'Boulevard Central 789'),
+('Diego Ramírez', 'diego.ramirez@email.com', '1176543210', 'Pasaje Estrella 321'),
+('Sofía Torres', 'sofia.torres@email.com', '1145678901', 'Ruta 8 Km 45'),
+('Julián Pereyra', 'julian.pereyra@email.com', '1198765432', 'Diagonal Norte 111'),
+('Camila Sosa', 'camila.sosa@email.com', '1122334455', 'Camino del Sol 555'),
+('Martín Rivas', 'martin.rivas@email.com', '1166112233', 'San Martín 2020'),
+('Agustina Vera', 'agustina.vera@email.com', '1155667788', 'Av. Libertad 987'),
+('Nicolás Méndez', 'nicolas.mendez@email.com', '1177223344', 'Los Pinos 4040');
+
+UPDATE Ventas
+SET ClienteID = ABS(CHECKSUM(NEWID()) % 10) + 1
+WHERE ClienteID IS NULL;
