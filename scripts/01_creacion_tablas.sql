@@ -1,5 +1,5 @@
 -- 01_creacion_tablas.sql
--- Script de creación de tablas para la tienda de ropa Estilo Urbano
+-- Script de creaciÃ³n de tablas para la tienda de ropa Estilo Urbano
 
 CREATE TABLE Categorias (
     CategoriaID INT PRIMARY KEY IDENTITY(1,1),
