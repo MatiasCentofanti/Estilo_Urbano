@@ -92,3 +92,6 @@ CREATE TABLE AuditoriaCambios (
     UsuarioSistema VARCHAR(100),
     RegistroAfectado VARCHAR(MAX)
 );
+
+ALTER TABLE AuditoriaCambios
+ALTER COLUMN Operacion VARCHAR(20);
