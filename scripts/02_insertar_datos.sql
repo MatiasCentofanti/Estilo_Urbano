@@ -87,3 +87,48 @@ INSERT INTO Productos (NombreProducto, Talle, Precio, StockActual, CategoriaID) 
 ('Zapatilla con Soporte Extra', '40', 7200.00, 5, 4),
 ('Zapatilla Ligera para Gimnasio', '41', 6800.00, 11, 4),
 ('Zapatilla de Moda con Plataforma', '39', 7300.00, 4, 4);
+
+-- Ventas
+INSERT INTO Ventas (Total) VALUES (10500.00);
+INSERT INTO Ventas (Total) VALUES (8700.00);
+INSERT INTO Ventas (Total) VALUES (14300.00);
+INSERT INTO Ventas (Total) VALUES (21000.00);
+INSERT INTO Ventas (Total) VALUES (5600.00);
+INSERT INTO Ventas (Total) VALUES (9800.00);
+INSERT INTO Ventas (Total) VALUES (11700.00);
+INSERT INTO Ventas (Total) VALUES (13400.00);
+INSERT INTO Ventas (Total) VALUES (6900.00);
+INSERT INTO Ventas (Total) VALUES (8500.00);
+INSERT INTO Ventas (Total) VALUES (9200.00);
+INSERT INTO Ventas (Total) VALUES (7600.00);
+INSERT INTO Ventas (Total) VALUES (6300.00);
+INSERT INTO Ventas (Total) VALUES (11300.00);
+INSERT INTO Ventas (Total) VALUES (15700.00);
+INSERT INTO Ventas (Total) VALUES (8900.00);
+INSERT INTO Ventas (Total) VALUES (14800.00);
+INSERT INTO Ventas (Total) VALUES (7900.00);
+INSERT INTO Ventas (Total) VALUES (12100.00);
+INSERT INTO Ventas (Total) VALUES (9900.00);
+
+-- DetalleVenta
+INSERT INTO DetalleVenta (VentaID, ProductoID, Cantidad, Subtotal) VALUES
+(1, 1, 2, 10500.00),
+(2, 3, 1, 8700.00),
+(3, 5, 1, 14300.00),
+(4, 2, 2, 21000.00),
+(5, 7, 1, 5600.00),
+(6, 6, 2, 9800.00),
+(7, 8, 1, 11700.00),
+(8, 4, 2, 13400.00),
+(9, 9, 1, 6900.00),
+(10, 10, 1, 8500.00),
+(11, 11, 1, 9200.00),
+(12, 12, 1, 7600.00),
+(13, 13, 2, 6300.00),
+(14, 14, 1, 11300.00),
+(15, 15, 2, 15700.00),
+(16, 16, 1, 8900.00),
+(17, 17, 2, 14800.00),
+(18, 18, 1, 7900.00),
+(19, 19, 2, 12100.00),
+(20, 20, 1, 9900.00);
