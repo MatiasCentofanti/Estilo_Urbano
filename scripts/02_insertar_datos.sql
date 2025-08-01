@@ -178,3 +178,16 @@ where VentaID between 14 and 18;
 update Ventas
 set EmpleadoID = 3
 where VentaID in (19, 20);
+
+INSERT INTO Proveedores (NombreProveedor, Telefono, Email)
+VALUES
+('Moda Urbana S.A.', '1155338801', 'contacto@modaurbana.com'),
+('Estilo Joven SRL', '1144223377', 'ventas@estilojoven.com'),
+('SportLine Distribuciones', '1133665544', 'info@sportline.com'),
+('Punto Streetwear', '1122889911', 'contacto@puntostreet.com'),
+('Indumentaria Patagonia', '1166772200', 'ventas@patagoniaind.com'),
+('Zapas al Tope', '1155667788', 'zapatillas@altopestyle.com'),
+('Ropa y Más', '1133554466', 'info@ropaymas.com'),
+('Distribuidora UrbanStyle', '1144778899', 'urban@distristyle.com'),
+('Camperas y Abrigos S.R.L.', '1122113344', 'ventas@camperasabrigos.com'),
+('Todo Pantalones', '1177990022', 'contacto@todopantalones.com');
