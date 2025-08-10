@@ -231,3 +231,14 @@ CREATE TABLE CampañasPublicitarias (
     Presupuesto DECIMAL(10,2) NOT NULL
 );
 
+ALTER TABLE Descuentos
+ADD ProductoID INT NULL,
+    CampañaID INT NULL;
+
+ALTER TABLE Descuentos
+ADD CONSTRAINT FK_Descuentos_Productos
+FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID);
+
+ALTER TABLE Descuentos
+ADD CONSTRAINT FK_Descuentos_CampañasPublicitarias
+FOREIGN KEY (CampañaID) REFERENCES CampañasPublicitarias(CampañaID);
