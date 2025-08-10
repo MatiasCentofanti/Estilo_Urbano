@@ -183,7 +183,7 @@ CREATE TABLE PedidosProveedores (
     PedidoProveedorID INT IDENTITY(1,1) PRIMARY KEY,
     ProveedorID INT NOT NULL,
     FechaPedido DATE NOT NULL DEFAULT GETDATE(),
-    Estado NVARCHAR(50) NOT NULL, -- Ej: Pendiente, Recibido, Cancelado
+    Estado NVARCHAR(50) NOT NULL,
     CONSTRAINT FK_PedidosProveedores_Proveedor FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID)
 );
 
@@ -208,7 +208,7 @@ CREATE TABLE MovimientosCaja (
     MovimientoID INT IDENTITY(1,1) PRIMARY KEY,
     CajaID INT NOT NULL,
     FechaMovimiento DATE NOT NULL DEFAULT GETDATE(),
-    TipoMovimiento NVARCHAR(50) NOT NULL, -- Ingreso / Egreso
+    TipoMovimiento NVARCHAR(50) NOT NULL,
     Monto DECIMAL(10,2) NOT NULL,
     Descripcion NVARCHAR(255),
     CONSTRAINT FK_MovimientosCaja_Caja FOREIGN KEY (CajaID) REFERENCES Cajas(CajaID)
@@ -230,3 +230,4 @@ CREATE TABLE CampañasPublicitarias (
     FechaFin DATE NOT NULL,
     Presupuesto DECIMAL(10,2) NOT NULL
 );
+
