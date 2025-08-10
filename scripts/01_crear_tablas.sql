@@ -95,3 +95,138 @@ CREATE TABLE AuditoriaCambios (
 
 ALTER TABLE AuditoriaCambios
 ALTER COLUMN Operacion VARCHAR(20);
+
+CREATE TABLE EntradasStock (
+    EntradaID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    FechaEntrada DATE NOT NULL DEFAULT GETDATE(),
+    ProveedorID INT NOT NULL,
+    Observaciones NVARCHAR(255),
+    CONSTRAINT FK_EntradasStock_Producto FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID),
+    CONSTRAINT FK_EntradasStock_Proveedor FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID)
+);
+
+CREATE TABLE SalidasStock (
+    SalidaID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    FechaSalida DATE NOT NULL DEFAULT GETDATE(),
+    Motivo NVARCHAR(100) NOT NULL,
+    CONSTRAINT FK_SalidasStock_Producto FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE Pagos (
+    PagoID INT IDENTITY(1,1) PRIMARY KEY,
+    VentaID INT NOT NULL,
+    Monto DECIMAL(10,2) NOT NULL,
+    MetodoPago NVARCHAR(50) NOT NULL,
+    FechaPago DATE NOT NULL DEFAULT GETDATE(),
+    CONSTRAINT FK_Pagos_Venta FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID)
+);
+
+CREATE TABLE Facturas (
+    FacturaID INT IDENTITY(1,1) PRIMARY KEY,
+    VentaID INT NOT NULL,
+    NumeroFactura NVARCHAR(50) NOT NULL,
+    FechaEmision DATE NOT NULL DEFAULT GETDATE(),
+    Total DECIMAL(10,2) NOT NULL,
+    CONSTRAINT FK_Facturas_Venta FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID)
+);
+
+CREATE TABLE Descuentos (
+    DescuentoID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreDescuento NVARCHAR(100) NOT NULL,
+    Porcentaje DECIMAL(5,2) NOT NULL,
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NOT NULL
+);
+
+CREATE TABLE HistorialComprasClientes (
+    HistorialID INT IDENTITY(1,1) PRIMARY KEY,
+    ClienteID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    FechaCompra DATE NOT NULL DEFAULT GETDATE(),
+    Cantidad INT NOT NULL,
+    CONSTRAINT FK_Historial_Cliente FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    CONSTRAINT FK_Historial_Producto FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE AsistenciasEmpleados (
+    AsistenciaID INT IDENTITY(1,1) PRIMARY KEY,
+    EmpleadoID INT NOT NULL,
+    Fecha DATE NOT NULL DEFAULT GETDATE(),
+    Estado NVARCHAR(50) NOT NULL,
+    CONSTRAINT FK_Asistencia_Empleado FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID)
+);
+
+CREATE TABLE Salarios (
+    SalarioID INT IDENTITY(1,1) PRIMARY KEY,
+    EmpleadoID INT NOT NULL,
+    Monto DECIMAL(10,2) NOT NULL,
+    FechaPago DATE NOT NULL DEFAULT GETDATE(),
+    CONSTRAINT FK_Salarios_Empleado FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID)
+);
+
+CREATE TABLE Devoluciones (
+    DevolucionID INT IDENTITY(1,1) PRIMARY KEY,
+    VentaID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    FechaDevolucion DATE NOT NULL DEFAULT GETDATE(),
+    Motivo NVARCHAR(255) NOT NULL,
+    CONSTRAINT FK_Devoluciones_Venta FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID),
+    CONSTRAINT FK_Devoluciones_Producto FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE PedidosProveedores (
+    PedidoProveedorID INT IDENTITY(1,1) PRIMARY KEY,
+    ProveedorID INT NOT NULL,
+    FechaPedido DATE NOT NULL DEFAULT GETDATE(),
+    Estado NVARCHAR(50) NOT NULL, -- Ej: Pendiente, Recibido, Cancelado
+    CONSTRAINT FK_PedidosProveedores_Proveedor FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID)
+);
+
+CREATE TABLE DetallePedidoProveedor (
+    DetalleID INT IDENTITY(1,1) PRIMARY KEY,
+    PedidoProveedorID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    PrecioUnitario DECIMAL(10,2) NOT NULL,
+    CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY (PedidoProveedorID) REFERENCES PedidosProveedores(PedidoProveedorID),
+    CONSTRAINT FK_DetallePedido_Producto FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+
+CREATE TABLE Cajas (
+    CajaID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreCaja NVARCHAR(50) NOT NULL,
+    SaldoInicial DECIMAL(10,2) NOT NULL,
+    SaldoActual DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE MovimientosCaja (
+    MovimientoID INT IDENTITY(1,1) PRIMARY KEY,
+    CajaID INT NOT NULL,
+    FechaMovimiento DATE NOT NULL DEFAULT GETDATE(),
+    TipoMovimiento NVARCHAR(50) NOT NULL, -- Ingreso / Egreso
+    Monto DECIMAL(10,2) NOT NULL,
+    Descripcion NVARCHAR(255),
+    CONSTRAINT FK_MovimientosCaja_Caja FOREIGN KEY (CajaID) REFERENCES Cajas(CajaID)
+);
+
+CREATE TABLE PuntosClientes (
+    PuntoID INT IDENTITY(1,1) PRIMARY KEY,
+    ClienteID INT NOT NULL,
+    PuntosAcumulados INT NOT NULL DEFAULT 0,
+    FechaUltimaActualizacion DATE NOT NULL DEFAULT GETDATE(),
+    CONSTRAINT FK_PuntosClientes_Cliente FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
+);
+
+CREATE TABLE CampañasPublicitarias (
+    CampañaID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreCampaña NVARCHAR(100) NOT NULL,
+    Descripcion NVARCHAR(255),
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NOT NULL,
+    Presupuesto DECIMAL(10,2) NOT NULL
+);
