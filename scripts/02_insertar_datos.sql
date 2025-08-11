@@ -332,3 +332,50 @@ VALUES
 (10, '2025-07-20', 'Completado'),
 (6, '2025-07-25', 'Pendiente'),
 (1, '2025-07-28', 'Completado');
+
+INSERT INTO DetallePedidoProveedor (PedidoProveedorID, ProductoID, Cantidad, PrecioUnitario)
+VALUES
+-- Pedido 1 - Proveedor 1
+(1, 1, 20, 5500.00),
+(1, 2, 15, 6300.00),
+(1, 12, 10, 1600.00),
+
+-- Pedido 2 - Proveedor 6
+(2, 5, 12, 18900.00),
+(2, 18, 8, 7200.00),
+
+-- Pedido 3 - Proveedor 9
+(3, 4, 5, 14500.00),
+(3, 10, 7, 7000.00),
+(3, 16, 4, 8500.00),
+
+-- Pedido 4 - Proveedor 10
+(4, 3, 10, 10500.00),
+(4, 8, 15, 3000.00),
+
+-- Pedido 5 - Proveedor 1
+(5, 20, 18, 1900.00),
+(5, 42, 14, 1400.00),
+
+-- Pedido 6 - Proveedor 6
+(6, 32, 9, 7500.00),
+(6, 37, 6, 8300.00),
+(6, 39, 4, 7200.00),
+
+-- Pedido 7 - Proveedor 9
+(7, 28, 5, 7000.00),
+(7, 30, 8, 5500.00),
+
+-- Pedido 8 - Proveedor 10
+(8, 24, 12, 3100.00),
+(8, 25, 10, 3300.00),
+(8, 26, 14, 2900.00),
+
+-- Pedido 9 - Proveedor 6
+(9, 52, 5, 9500.00),
+(9, 54, 8, 7400.00),
+
+-- Pedido 10 - Proveedor 1
+(10, 40, 20, 2100.00),
+(10, 41, 15, 2300.00),
+(10, 43, 18, 1600.00);
