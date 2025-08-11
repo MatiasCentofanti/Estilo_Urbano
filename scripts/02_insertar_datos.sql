@@ -207,3 +207,11 @@ where CategoriaID = 2;
 update Productos
 set ProveedorID = 1
 where CategoriaID = 1;
+
+INSERT INTO Facturas (VentaID, NumeroFactura, FechaEmision, Total)
+SELECT 
+    VentaID,
+    CONCAT('FAC-', VentaID),         
+    CAST(FechaVenta AS date),     
+    Total
+FROM Ventas;
