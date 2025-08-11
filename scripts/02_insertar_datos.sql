@@ -274,3 +274,35 @@ SELECT
 FROM Ventas v
 GROUP BY v.ClienteID;
 
+INSERT INTO AsistenciasEmpleados (EmpleadoID, Fecha, Estado)
+VALUES
+(1, '2025-08-01', 'Presente'),
+(2, '2025-08-01', 'Presente'),
+(3, '2025-08-01', 'Ausente'),
+(4, '2025-08-01', 'Presente'),
+(5, '2025-08-01', 'Tarde'),
+
+(1, '2025-08-02', 'Presente'),
+(2, '2025-08-02', 'Presente'),
+(3, '2025-08-02', 'Presente'),
+(4, '2025-08-02', 'Licencia'),
+(5, '2025-08-02', 'Presente'),
+
+(1, '2025-08-03', 'Ausente'),
+(2, '2025-08-03', 'Presente'),
+(3, '2025-08-03', 'Presente'),
+(4, '2025-08-03', 'Presente'),
+(5, '2025-08-03', 'Presente'),
+
+(1, '2025-08-04', 'Presente'),
+(2, '2025-08-04', 'Presente'),
+(3, '2025-08-04', 'Tarde'),
+(4, '2025-08-04', 'Presente'),
+(5, '2025-08-04', 'Presente'),
+
+(1, '2025-08-05', 'Presente'),
+(2, '2025-08-05', 'Ausente'),
+(3, '2025-08-05', 'Presente'),
+(4, '2025-08-05', 'Presente'),
+(5, '2025-08-05', 'Presente');
+
