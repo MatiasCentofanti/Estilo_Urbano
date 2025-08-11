@@ -379,3 +379,15 @@ VALUES
 (10, 40, 20, 2100.00),
 (10, 41, 15, 2300.00),
 (10, 43, 18, 1600.00);
+
+INSERT INTO Cajas (NombreCaja, SaldoInicial, SaldoActual)
+VALUES 
+('Caja Principal', 50000.00, 50000.00),
+('Caja Secundaria', 20000.00, 20000.00);
+
+INSERT INTO MovimientosCaja (CajaID, FechaMovimiento, TipoMovimiento, Monto, Descripcion)
+VALUES
+(1, '2025-08-01', 'Ingreso', 10000.00, 'Venta del día'),
+(1, '2025-08-02', 'Egreso', 5000.00, 'Pago a proveedores'),
+(2, '2025-08-01', 'Ingreso', 4000.00, 'Fondo inicial'),
+(2, '2025-08-03', 'Egreso', 2000.00, 'Compra de materiales');
