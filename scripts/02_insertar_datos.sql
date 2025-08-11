@@ -266,3 +266,11 @@ VALUES
 UPDATE Pagos
 SET MetodoPago = 'Tarjeta de Crédito';
 
+INSERT INTO PuntosClientes (ClienteID, PuntosAcumulados, FechaUltimaActualizacion)
+SELECT 
+    v.ClienteID,
+    COUNT(v.VentaID) * 10 AS PuntosAcumulados,  -- 10 puntos por venta
+    MAX(v.FechaVenta) AS FechaUltimaActualizacion
+FROM Ventas v
+GROUP BY v.ClienteID;
+
