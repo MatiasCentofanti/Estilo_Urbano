@@ -319,3 +319,16 @@ VALUES
 (3, 240000.00, '2025-08-31'),
 (4, 300000.00, '2025-08-31'),
 (5, 220000.00, '2025-08-31');
+
+INSERT INTO PedidosProveedores (ProveedorID, FechaPedido, Estado)
+VALUES
+(1, '2025-07-02', 'Pendiente'),
+(6, '2025-07-05', 'Completado'),
+(9, '2025-07-08', 'En tránsito'),
+(10, '2025-07-10', 'Pendiente'),
+(1, '2025-07-12', 'Completado'),
+(6, '2025-07-15', 'Pendiente'),
+(9, '2025-07-18', 'En tránsito'),
+(10, '2025-07-20', 'Completado'),
+(6, '2025-07-25', 'Pendiente'),
+(1, '2025-07-28', 'Completado');
