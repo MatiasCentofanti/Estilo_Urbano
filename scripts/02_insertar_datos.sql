@@ -229,3 +229,15 @@ VALUES
     ('Vendedor'),
     ('Cajera'),
     ('Encargado');
+
+INSERT INTO EntradasStock (ProductoID, Cantidad, FechaEntrada, ProveedorID, Observaciones)
+SELECT
+    ProductoID,
+    StockActual AS Cantidad,
+    CAST('2025-07-31' AS date) AS FechaEntrada,
+    ProveedorID,
+    'Ingreso automático' AS Observaciones
+FROM Productos
+WHERE StockActual > 0;
+
+
