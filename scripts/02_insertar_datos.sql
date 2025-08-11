@@ -223,3 +223,9 @@ SELECT
     'Efectivo',          
     CAST(FechaVenta AS date)
 FROM Ventas;
+
+INSERT INTO Roles (NombreRol)
+VALUES
+    ('Vendedor'),
+    ('Cajera'),
+    ('Encargado');
