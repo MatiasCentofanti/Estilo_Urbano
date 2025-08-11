@@ -215,3 +215,11 @@ SELECT
     CAST(FechaVenta AS date),     
     Total
 FROM Ventas;
+
+INSERT INTO Pagos (VentaID, Monto, MetodoPago, FechaPago)
+SELECT 
+    VentaID,
+    Total,
+    'Efectivo',          
+    CAST(FechaVenta AS date)
+FROM Ventas;
