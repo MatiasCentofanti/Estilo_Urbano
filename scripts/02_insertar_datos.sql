@@ -263,4 +263,6 @@ VALUES
 (19, 2, '2025-08-01', 'Venta'),
 (20, 1, '2025-08-01', 'Venta');
 
+UPDATE Pagos
+SET MetodoPago = 'Tarjeta de Crédito';
 
