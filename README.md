@@ -1,7 +1,9 @@
 Proyecto de Base de Datos: E-commerce "Estilo Urbano"
+
 Base de datos transaccional y analítica para un e-commerce, implementada en T-SQL (SQL Server). El proyecto se enfoca en la integridad de datos, automatización de reglas de negocio y análisis visual con Power BI.
 
 Stack Tecnológico
+
 Lenguaje: T-SQL
 
 Gestor de BD: Microsoft SQL Server
