@@ -1,27 +1,50 @@
--- 03_crear_vistas.sql
--- Crear vista para mostrar el inventario actual junto con la categoría del producto
+/********************************************************************************************
+* PROYECTO: Base de Datos para E-commerce "Estilo Urbano"
+* SCRIPT: 03 - Creación de Vistas
+* AUTOR: Matias Centofanti
+* FECHA: 20/10/2025
+* DESCRIPCIÓN:
+* Este script crea un conjunto de vistas para simplificar las consultas comunes,
+* mejorar la seguridad y facilitar el acceso a datos complejos para análisis y reportes.
+********************************************************************************************/
+
+-- =========================================================================================
+-- VISTA 1: INVENTARIO ACTUAL DE PRODUCTOS
+-- Propósito: Ofrecer una visión rápida y clara del inventario disponible, combinando
+-- información del producto con su categoría para facilitar la gestión de stock y reportes.
+-- =========================================================================================
 CREATE VIEW vw_Inventario AS
-SELECT 
-    p.ProductoID,         -- ID del producto
-    p.NombreProducto,     -- Nombre del producto
-    p.Talle,              -- Talle del producto (ejemplo: S, M, L)
-    p.Precio,             -- Precio unitario
-    p.StockActual,        -- Cantidad disponible en stock
-    c.NombreCategoria     -- Nombre de la categoría (ejemplo: Remeras, Pantalones)
-FROM Productos p
-LEFT JOIN Categorias c ON p.CategoriaID = c.CategoriaID;
+SELECT
+    p.ProductoID,
+    p.NombreProducto,
+    p.Talle,
+    p.Precio,
+    p.StockActual,
+    c.NombreCategoria
+FROM
+    Productos p
+LEFT JOIN
+    Categorias c ON p.CategoriaID = c.CategoriaID;
 GO
 
--- Crear vista para mostrar el detalle de las ventas con información del producto
+-- =========================================================================================
+-- VISTA 2: DETALLE GRANULAR DE VENTAS
+-- Propósito: Desglosar cada venta en sus productos individuales, permitiendo un análisis
+-- detallado del rendimiento de cada artículo en transacciones específicas. Es la base
+-- para análisis de carritos de compra y performance de productos.
+-- =========================================================================================
 CREATE VIEW vw_VentasDetalle AS
-SELECT 
-    v.VentaID,            -- ID de la venta
-    v.FechaVenta,         -- Fecha en que se realizó la venta
-    dv.ProductoID,        -- ID del producto vendido
-    p.NombreProducto,     -- Nombre del producto vendido
-    dv.Cantidad,          -- Cantidad vendida de ese producto
-    dv.Subtotal           -- Subtotal (cantidad * precio) para ese producto en la venta
-FROM Ventas v
-INNER JOIN DetalleVenta dv ON v.VentaID = dv.VentaID
-INNER JOIN Productos p ON dv.ProductoID = p.ProductoID;
+SELECT
+    v.VentaID,
+    v.FechaVenta,
+    dv.ProductoID,
+    p.NombreProducto,
+    dv.Cantidad,
+    dv.Subtotal
+FROM
+    Ventas v
+INNER JOIN
+    DetalleVenta dv ON v.VentaID = dv.VentaID
+INNER JOIN
+    Productos p ON dv.ProductoID = p.ProductoID;
 GO
