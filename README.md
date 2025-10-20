@@ -5,9 +5,7 @@ Base de datos transaccional y analítica para un e-commerce, implementada en T-S
 Stack Tecnológico
 
 Lenguaje: T-SQL
-
 Gestor de BD: Microsoft SQL Server
-
 Visualización: Power BI
 
 Visualización del Proyecto
