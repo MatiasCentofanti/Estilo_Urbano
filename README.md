@@ -9,6 +9,7 @@ Gestor de BD: Microsoft SQL Server
 Visualización: Power BI
 
 Visualización del Proyecto
+
 La arquitectura de la base de datos y el resultado del análisis de negocio se pueden ver a continuación.
 
 Diagrama Entidad-Relación (ERD)
