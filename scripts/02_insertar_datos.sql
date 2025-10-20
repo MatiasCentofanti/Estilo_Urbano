@@ -1,118 +1,133 @@
--- 02_insertar_datos.sql
--- Inserción de datos de prueba para Estilo Urbano
+/********************************************************************************************
+* PROYECTO: Base de Datos para E-commerce "Estilo Urbano"
+* SCRIPT: 02 - Inserción de Datos de Prueba (Seed)
+* AUTOR: Matias Centofanti
+* FECHA: 20/10/2025
+* DESCRIPCIÓN:
+* Este script puebla la base de datos con un conjunto de datos de prueba coherentes
+* para simular el funcionamiento de la tienda y permitir el análisis de datos.
+********************************************************************************************/
 
--- Categorías
-INSERT INTO Categorias (NombreCategoria) VALUES 
-('Remeras'), 
-('Pantalones'), 
-('Camperas'), 
+-- =========================================================================================
+-- SECCIÓN 1: DATOS FUNDAMENTALES (CORE)
+-- Inserción en tablas maestras que sirven como base para el resto de los datos.
+-- =========================================================================================
+
+-- Inserción de Categorías
+INSERT INTO Categorias (NombreCategoria) VALUES
+('Remeras'),
+('Pantalones'),
+('Camperas'),
 ('Zapatillas');
 
--- Productos
-INSERT INTO Productos (NombreProducto, Talle, Precio, StockActual, CategoriaID) VALUES
-('Remera Básica Blanca', 'M', 5500.00, 20, 1),
-('Remera Estampada Negra', 'L', 6300.00, 15, 1),
-('Pantalón Chino Beige', 'M', 10500.00, 10, 2),
-('Campera de Jean', 'L', 14500.00, 5, 3),
-('Zapatillas Urbanas', '42', 18900.00, 8, 4);
-('Remera Básica Negra', 'M', 1500.00, 10, 1),
-('Remera Estampada', 'L', 1800.00, 8, 1),
-('Jean Clásico', '32', 3000.00, 6, 2),
-('Jean Slim Fit', '30', 3200.00, 4, 2),
-('Zapatilla Deportiva', '42', 7000.00, 5, 3),
-('Zapatilla Casual', '41', 6500.00, 7, 3);
-('Remera Manga Larga', 'S', 1600.00, 12, 1),
-('Remera Deportiva', 'M', 2000.00, 15, 1),
-('Jean Relaxed Fit', '34', 2800.00, 5, 2),
-('Pantalón Chino', '32', 2700.00, 7, 2),
-('Campera de Cuero', 'L', 8500.00, 2, 3),
-('Campera Jeans', 'M', 4800.00, 6, 3),
-('Zapatilla Running', '43', 7200.00, 8, 4),
-('Zapatilla de Skate', '44', 6800.00, 4, 4);
-('Remera Oversize', 'XL', 1900.00, 14, 1),
-('Remera Básica Blanca', 'M', 1400.00, 20, 1),
-('Remera Polo', 'L', 2200.00, 10, 1),
-('Remera de Algodón Orgánico', 'S', 2500.00, 9, 1),
-('Jean Skinny', '28', 3100.00, 7, 2),
-('Jean Tiro Alto', '30', 3300.00, 8, 2),
-('Pantalón Cargo', '32', 2900.00, 11, 2),
-('Pantalón Jogger', 'M', 2600.00, 13, 2),
-('Campera Acolchada', 'L', 7000.00, 5, 3),
-('Campera Softshell', 'M', 6800.00, 6, 3),
-('Campera Rompeviento', 'S', 5500.00, 4, 3),
-('Campera con Capucha', 'XL', 7200.00, 3, 3),
-('Zapatilla Trail', '42', 7500.00, 12, 4),
-('Zapatilla Casual de Lona', '41', 6200.00, 14, 4),
-('Zapatilla de Baloncesto', '44', 9000.00, 7, 4),
-('Zapatilla Minimalista', '43', 6800.00, 10, 4),
-('Zapatilla para Gimnasio', '40', 6700.00, 8, 4),
-('Zapatilla Running Pro', '42', 8300.00, 9, 4),
-('Zapatilla Vintage', '41', 6400.00, 11, 4),
-('Zapatilla con Luces', '39', 7200.00, 5, 4);
-('Remera Vintage Estampada', 'M', 2100.00, 15, 1),
-('Remera Deportiva Técnica', 'L', 2300.00, 13, 1),
-('Remera Básica Azul', 'S', 1400.00, 18, 1),
-('Remera Cuello V', 'M', 1600.00, 20, 1),
-('Jean Ripped', '32', 3500.00, 6, 2),
-('Jean Recto', '34', 3000.00, 9, 2),
-('Pantalón Formal', '32', 4000.00, 4, 2),
-('Pantalón de Tela', '30', 2800.00, 11, 2),
-('Campera Parka', 'L', 7800.00, 5, 3),
-('Campera de Lana', 'M', 7200.00, 7, 3),
-('Campera Técnica', 'S', 8000.00, 3, 3),
-('Campera Reflectiva', 'XL', 8500.00, 2, 3),
-('Zapatilla de Montaña', '43', 9500.00, 6, 4),
-('Zapatilla Casual Alta', '42', 6800.00, 14, 4),
-('Zapatilla Running Ligera', '41', 7400.00, 9, 4),
-('Zapatilla Crossfit', '40', 7100.00, 8, 4),
-('Zapatilla Urbana', '44', 6900.00, 12, 4),
-('Zapatilla Skate Low', '42', 6500.00, 7, 4),
-('Remera Manga Corta Estampada', 'M', 1700.00, 16, 1),
-('Remera de Algodón Premium', 'L', 2400.00, 10, 1),
-('Remera Deportiva con Logo', 'S', 2200.00, 12, 1),
-('Remera Básica Negra', 'XL', 1500.00, 18, 1),
-('Jean Stretch', '30', 3200.00, 7, 2),
-('Jean Tiro Medio', '32', 3100.00, 8, 2),
-('Pantalón Deportivo', 'M', 2800.00, 14, 2),
-('Pantalón Cargo Slim', '34', 3000.00, 9, 2),
-('Campera Softshell Impermeable', 'L', 7800.00, 5, 3),
-('Campera Acolchada Ligera', 'M', 7000.00, 7, 3),
-('Campera con Capucha Desmontable', 'S', 7500.00, 4, 3),
-('Campera de Jean Clásica', 'XL', 4900.00, 6, 3),
-('Zapatilla Deportiva de Trail', '42', 9500.00, 8, 4),
-('Zapatilla Casual Deportiva', '41', 6700.00, 10, 4),
-('Zapatilla Running Profesional', '43', 8800.00, 7, 4),
-('Zapatilla de Skate Alta', '44', 7000.00, 6, 4),
-('Zapatilla Urbana Moderna', '42', 6900.00, 9, 4),
-('Zapatilla con Soporte Extra', '40', 7200.00, 5, 4),
-('Zapatilla Ligera para Gimnasio', '41', 6800.00, 11, 4),
-('Zapatilla de Moda con Plataforma', '39', 7300.00, 4, 4);
+-- Inserción de Proveedores
+INSERT INTO Proveedores (NombreProveedor, Telefono, Email) VALUES
+('Moda Urbana S.A.', '1155338801', 'contacto@modaurbana.com'),
+('Estilo Joven SRL', '1144223377', 'ventas@estilojoven.com'),
+('SportLine Distribuciones', '1133665544', 'info@sportline.com'),
+('Punto Streetwear', '1122889911', 'contacto@puntostreet.com'),
+('Indumentaria Patagonia', '1166772200', 'ventas@patagoniaind.com'),
+('Zapas al Tope', '1155667788', 'zapatillas@altopestyle.com'),
+('Ropa y Más', '1133554466', 'info@ropaymas.com'),
+('Distribuidora UrbanStyle', '1144778899', 'urban@distristyle.com'),
+('Camperas y Abrigos S.R.L.', '1122113344', 'ventas@camperasabrigos.com'),
+('Todo Pantalones', '1177990022', 'contacto@todopantalones.com');
 
--- Ventas
-INSERT INTO Ventas (Total) VALUES (10500.00);
-INSERT INTO Ventas (Total) VALUES (8700.00);
-INSERT INTO Ventas (Total) VALUES (14300.00);
-INSERT INTO Ventas (Total) VALUES (21000.00);
-INSERT INTO Ventas (Total) VALUES (5600.00);
-INSERT INTO Ventas (Total) VALUES (9800.00);
-INSERT INTO Ventas (Total) VALUES (11700.00);
-INSERT INTO Ventas (Total) VALUES (13400.00);
-INSERT INTO Ventas (Total) VALUES (6900.00);
-INSERT INTO Ventas (Total) VALUES (8500.00);
-INSERT INTO Ventas (Total) VALUES (9200.00);
-INSERT INTO Ventas (Total) VALUES (7600.00);
-INSERT INTO Ventas (Total) VALUES (6300.00);
-INSERT INTO Ventas (Total) VALUES (11300.00);
-INSERT INTO Ventas (Total) VALUES (15700.00);
-INSERT INTO Ventas (Total) VALUES (8900.00);
-INSERT INTO Ventas (Total) VALUES (14800.00);
-INSERT INTO Ventas (Total) VALUES (7900.00);
-INSERT INTO Ventas (Total) VALUES (12100.00);
-INSERT INTO Ventas (Total) VALUES (9900.00);
+-- Inserción de Clientes
+INSERT INTO Clientes (NombreCompleto, Email, Telefono, Direccion) VALUES
+('Lucía Fernández', 'lucia.fernandez@email.com', '1123456789', 'Av. Siempre Viva 123'),
+('Carlos Gómez', 'carlos.gomez@email.com', '1167894321', 'Calle Falsa 456'),
+('Mariana López', 'mariana.lopez@email.com', '1134567890', 'Boulevard Central 789'),
+('Diego Ramírez', 'diego.ramirez@email.com', '1176543210', 'Pasaje Estrella 321'),
+('Sofía Torres', 'sofia.torres@email.com', '1145678901', 'Ruta 8 Km 45'),
+('Julián Pereyra', 'julian.pereyra@email.com', '1198765432', 'Diagonal Norte 111'),
+('Camila Sosa', 'camila.sosa@email.com', '1122334455', 'Camino del Sol 555'),
+('Martín Rivas', 'martin.rivas@email.com', '1166112233', 'San Martín 2020'),
+('Agustina Vera', 'agustina.vera@email.com', '1155667788', 'Av. Libertad 987'),
+('Nicolás Méndez', 'nicolas.mendez@email.com', '1177223344', 'Los Pinos 4040');
 
--- DetalleVenta
+-- Inserción de Empleados
+INSERT INTO Empleados (Nombre, Rol) VALUES
+('Carlos Pérez', 'Vendedor'),
+('Laura Gómez', 'Cajera'),
+('Sofía Martínez', 'Vendedor'),
+('Marcos Díaz', 'Encargado'),
+('Romina Torres', 'Vendedor');
+
+-- Inserción de Cajas
+INSERT INTO Cajas (NombreCaja, SaldoInicial, SaldoActual) VALUES
+('Caja Principal', 50000.00, 50000.00),
+('Caja Secundaria', 20000.00, 20000.00);
+
+-- =========================================================================================
+-- SECCIÓN 2: GESTIÓN DE PRODUCTOS E INVENTARIO
+-- =========================================================================================
+
+-- Inserción de Productos
+INSERT INTO Productos (NombreProducto, Talle, Precio, StockActual, CategoriaID, ProveedorID) VALUES
+-- Remeras (Cat 1, Prov 1)
+('Remera Básica Blanca', 'M', 5500.00, 20, 1, 1),
+('Remera Estampada Negra', 'L', 6300.00, 15, 1, 1),
+('Remera Básica Negra', 'M', 1500.00, 10, 1, 1),
+('Remera Estampada', 'L', 1800.00, 8, 1, 1),
+('Remera Manga Larga', 'S', 1600.00, 12, 1, 1),
+('Remera Deportiva', 'M', 2000.00, 15, 1, 1),
+('Remera Oversize', 'XL', 1900.00, 14, 1, 1),
+-- Pantalones (Cat 2, Prov 10)
+('Pantalón Chino Beige', 'M', 10500.00, 10, 2, 10),
+('Jean Clásico', '32', 3000.00, 6, 2, 10),
+('Jean Slim Fit', '30', 3200.00, 4, 2, 10),
+('Jean Relaxed Fit', '34', 2800.00, 5, 2, 10),
+('Pantalón Chino', '32', 2700.00, 7, 2, 10),
+-- Camperas (Cat 3, Prov 9)
+('Campera de Jean', 'L', 14500.00, 5, 3, 9),
+('Campera de Cuero', 'L', 8500.00, 2, 3, 9),
+('Campera Jeans', 'M', 4800.00, 6, 3, 9),
+-- Zapatillas (Cat 4, Prov 6)
+('Zapatillas Urbanas', '42', 18900.00, 8, 4, 6),
+('Zapatilla Deportiva', '42', 7000.00, 5, 4, 6),
+('Zapatilla Casual', '41', 6500.00, 7, 4, 6),
+('Zapatilla Running', '43', 7200.00, 8, 4, 6),
+('Zapatilla de Skate', '44', 6800.00, 4, 4, 6);
+
+-- Inserción de stock inicial basado en los productos ya cargados
+INSERT INTO EntradasStock (ProductoID, Cantidad, FechaEntrada, ProveedorID, Observaciones)
+SELECT ProductoID, StockActual, '2025-07-31', ProveedorID, 'Carga de stock inicial'
+FROM Productos WHERE StockActual > 0;
+
+-- =========================================================================================
+-- SECCIÓN 3: GESTIÓN DE VENTAS Y TRANSACCIONES
+-- =========================================================================================
+
+-- Inserción de Ventas (aún sin ClienteID ni EmpleadoID)
+INSERT INTO Ventas (Total, FechaVenta) VALUES
+(10500.00, '2025-08-01 10:30:00'), (8700.00, '2025-08-01 11:15:00'),
+(14300.00, '2025-08-02 12:00:00'), (21000.00, '2025-08-02 14:20:00'),
+(5600.00, '2025-08-03 16:00:00'), (9800.00, '2025-08-03 17:45:00'),
+(11700.00, '2025-08-04 10:10:00'), (13400.00, '2025-08-04 11:30:00'),
+(6900.00, '2025-08-05 15:00:00'), (8500.00, '2025-08-05 16:40:00'),
+(9200.00, '2025-08-06 18:00:00'), (7600.00, '2025-08-06 19:15:00'),
+(6300.00, '2025-08-07 12:25:00'), (11300.00, '2025-08-07 13:50:00'),
+(15700.00, '2025-08-08 14:05:00'), (8900.00, '2025-08-08 15:30:00'),
+(14800.00, '2025-08-09 11:00:00'), (7900.00, '2025-08-09 12:45:00'),
+(12100.00, '2025-08-10 16:20:00'), (9900.00, '2025-08-10 17:55:00');
+
+-- Asignación de Clientes y Empleados a las Ventas
+-- Nota: Se asigna un cliente aleatorio a cada venta para simular datos reales.
+UPDATE Ventas SET ClienteID = ABS(CHECKSUM(NEWID()) % 10) + 1 WHERE ClienteID IS NULL;
+
+-- Nota: Se asignan vendedores a bloques de ventas de forma consolidada.
+UPDATE Ventas SET EmpleadoID =
+    CASE
+        WHEN VentaID IN (1, 14, 15, 16, 17, 18) THEN 1 -- Atendidas por Carlos Pérez
+        WHEN VentaID IN (2, 3, 4, 5, 6, 19, 20) THEN 3 -- Atendidas por Sofía Martínez
+        WHEN VentaID BETWEEN 7 AND 13 THEN 5           -- Atendidas por Romina Torres
+    END
+WHERE EmpleadoID IS NULL;
+
+-- Inserción del Detalle de cada Venta
 INSERT INTO DetalleVenta (VentaID, ProductoID, Cantidad, Subtotal) VALUES
-(1, 1, 2, 10500.00),
+(1, 1, 1, 5500.00), (1, 8, 1, 5000.00), -- Venta 1
 (2, 3, 1, 8700.00),
 (3, 5, 1, 14300.00),
 (4, 2, 2, 21000.00),
@@ -133,261 +148,68 @@ INSERT INTO DetalleVenta (VentaID, ProductoID, Cantidad, Subtotal) VALUES
 (19, 19, 2, 12100.00),
 (20, 20, 1, 9900.00);
 
-INSERT INTO Clientes (NombreCompleto, Email, Telefono, Direccion)
-VALUES 
-('Lucía Fernández', 'lucia.fernandez@email.com', '1123456789', 'Av. Siempre Viva 123'),
-('Carlos Gómez', 'carlos.gomez@email.com', '1167894321', 'Calle Falsa 456'),
-('Mariana López', 'mariana.lopez@email.com', '1134567890', 'Boulevard Central 789'),
-('Diego Ramírez', 'diego.ramirez@email.com', '1176543210', 'Pasaje Estrella 321'),
-('Sofía Torres', 'sofia.torres@email.com', '1145678901', 'Ruta 8 Km 45'),
-('Julián Pereyra', 'julian.pereyra@email.com', '1198765432', 'Diagonal Norte 111'),
-('Camila Sosa', 'camila.sosa@email.com', '1122334455', 'Camino del Sol 555'),
-('Martín Rivas', 'martin.rivas@email.com', '1166112233', 'San Martín 2020'),
-('Agustina Vera', 'agustina.vera@email.com', '1155667788', 'Av. Libertad 987'),
-('Nicolás Méndez', 'nicolas.mendez@email.com', '1177223344', 'Los Pinos 4040');
-
-UPDATE Ventas
-SET ClienteID = ABS(CHECKSUM(NEWID()) % 10) + 1
-WHERE ClienteID IS NULL;
-
-INSERT INTO Empleados (Nombre, Rol) VALUES
-('Carlos Pérez', 'Vendedor'),
-('Laura Gómez', 'Cajera'),
-('Sofía Martínez', 'Vendedor'),
-('Marcos Díaz', 'Encargado'),
-('Romina Torres', 'Vendedor');
-
-INSERT INTO Vendedores (EmpleadoID) VALUES (1), (3), (5);
-
-update Ventas
-set EmpleadoID = 1
-where VentaID = 1;
-
-update Ventas
-set EmpleadoID = 3
-where VentaID in (2, 3, 4, 5, 6);
-
-update Ventas
-set EmpleadoID = 5
-where VentaID between 7 and 13;
-
-update Ventas
-set EmpleadoID = 1
-where VentaID between 14 and 18;
-
-update Ventas
-set EmpleadoID = 3
-where VentaID in (19, 20);
-
-INSERT INTO Proveedores (NombreProveedor, Telefono, Email)
-VALUES
-('Moda Urbana S.A.', '1155338801', 'contacto@modaurbana.com'),
-('Estilo Joven SRL', '1144223377', 'ventas@estilojoven.com'),
-('SportLine Distribuciones', '1133665544', 'info@sportline.com'),
-('Punto Streetwear', '1122889911', 'contacto@puntostreet.com'),
-('Indumentaria Patagonia', '1166772200', 'ventas@patagoniaind.com'),
-('Zapas al Tope', '1155667788', 'zapatillas@altopestyle.com'),
-('Ropa y Más', '1133554466', 'info@ropaymas.com'),
-('Distribuidora UrbanStyle', '1144778899', 'urban@distristyle.com'),
-('Camperas y Abrigos S.R.L.', '1122113344', 'ventas@camperasabrigos.com'),
-('Todo Pantalones', '1177990022', 'contacto@todopantalones.com');
-
-update Productos
-set ProveedorID = 6
-where CategoriaID = 4;
-
-update Productos
-set ProveedorID = 9
-where CategoriaID = 3;
-
-update Productos
-set ProveedorID = 10
-where CategoriaID = 2;
-
-update Productos
-set ProveedorID = 1
-where CategoriaID = 1;
-
+-- Generación de Facturas y Pagos a partir de las ventas
 INSERT INTO Facturas (VentaID, NumeroFactura, FechaEmision, Total)
-SELECT 
-    VentaID,
-    CONCAT('FAC-', VentaID),         
-    CAST(FechaVenta AS date),     
-    Total
-FROM Ventas;
+SELECT VentaID, 'FAC-' + CAST(VentaID AS VARCHAR(10)), CAST(FechaVenta AS DATE), Total FROM Ventas;
 
 INSERT INTO Pagos (VentaID, Monto, MetodoPago, FechaPago)
-SELECT 
-    VentaID,
-    Total,
-    'Efectivo',          
-    CAST(FechaVenta AS date)
-FROM Ventas;
+SELECT VentaID, Total, 'Efectivo', CAST(FechaVenta AS DATE) FROM Ventas;
 
-INSERT INTO Roles (NombreRol)
-VALUES
-    ('Vendedor'),
-    ('Cajera'),
-    ('Encargado');
+-- Simulación de cambio de método de pago para algunas transacciones
+UPDATE Pagos SET MetodoPago = 'Tarjeta de Crédito' WHERE VentaID % 2 = 0;
 
-INSERT INTO EntradasStock (ProductoID, Cantidad, FechaEntrada, ProveedorID, Observaciones)
-SELECT
-    ProductoID,
-    StockActual AS Cantidad,
-    CAST('2025-07-31' AS date) AS FechaEntrada,
-    ProveedorID,
-    'Ingreso automático' AS Observaciones
-FROM Productos
-WHERE StockActual > 0;
-
+-- Simulación de Salidas de Stock por Venta
 INSERT INTO SalidasStock (ProductoID, Cantidad, FechaSalida, Motivo)
-VALUES
-(1, 2, '2025-08-01', 'Venta'),
-(3, 1, '2025-08-01', 'Venta'),
-(5, 1, '2025-08-01', 'Venta'),
-(2, 2, '2025-08-01', 'Venta'),
-(7, 1, '2025-08-01', 'Venta'),
-(6, 2, '2025-08-01', 'Venta'),
-(8, 1, '2025-08-01', 'Venta'),
-(4, 2, '2025-08-01', 'Venta'),
-(9, 1, '2025-08-01', 'Venta'),
-(10, 1, '2025-08-01', 'Venta'),
-(11, 1, '2025-08-01', 'Venta'),
-(12, 1, '2025-08-01', 'Venta'),
-(13, 2, '2025-08-01', 'Venta'),
-(14, 1, '2025-08-01', 'Venta'),
-(15, 2, '2025-08-01', 'Venta'),
-(16, 1, '2025-08-01', 'Venta'),
-(17, 2, '2025-08-01', 'Venta'),
-(18, 1, '2025-08-01', 'Venta'),
-(19, 2, '2025-08-01', 'Venta'),
-(20, 1, '2025-08-01', 'Venta');
+SELECT dv.ProductoID, dv.Cantidad, CAST(v.FechaVenta AS DATE), 'Venta-' + CAST(v.VentaID AS VARCHAR(10))
+FROM DetalleVenta dv JOIN Ventas v ON dv.VentaID = v.VentaID;
 
-UPDATE Pagos
-SET MetodoPago = 'Tarjeta de Crédito';
 
+-- =========================================================================================
+-- SECCIÓN 4: GESTIÓN DE CLIENTES (CRM)
+-- =========================================================================================
 INSERT INTO PuntosClientes (ClienteID, PuntosAcumulados, FechaUltimaActualizacion)
-SELECT 
-    v.ClienteID,
-    COUNT(v.VentaID) * 10 AS PuntosAcumulados,  -- 10 puntos por venta
-    MAX(v.FechaVenta) AS FechaUltimaActualizacion
-FROM Ventas v
-GROUP BY v.ClienteID;
+SELECT ClienteID, COUNT(VentaID) * 10, MAX(FechaVenta)
+FROM Ventas WHERE ClienteID IS NOT NULL GROUP BY ClienteID;
 
-INSERT INTO AsistenciasEmpleados (EmpleadoID, Fecha, Estado)
-VALUES
-(1, '2025-08-01', 'Presente'),
-(2, '2025-08-01', 'Presente'),
-(3, '2025-08-01', 'Ausente'),
-(4, '2025-08-01', 'Presente'),
-(5, '2025-08-01', 'Tarde'),
+-- =========================================================================================
+-- SECCIÓN 5: GESTIÓN DE PERSONAL (RRHH)
+-- =========================================================================================
+INSERT INTO Vendedores (EmpleadoID) VALUES (1), (3), (5);
 
-(1, '2025-08-02', 'Presente'),
-(2, '2025-08-02', 'Presente'),
-(3, '2025-08-02', 'Presente'),
-(4, '2025-08-02', 'Licencia'),
-(5, '2025-08-02', 'Presente'),
+INSERT INTO AsistenciasEmpleados (EmpleadoID, Fecha, Estado) VALUES
+(1, '2025-08-01', 'Presente'), (2, '2025-08-01', 'Presente'), (3, '2025-08-01', 'Ausente'), (4, '2025-08-01', 'Presente'), (5, '2025-08-01', 'Tarde'),
+(1, '2025-08-02', 'Presente'), (2, '2025-08-02', 'Presente'), (3, '2025-08-02', 'Presente'), (4, '2025-08-02', 'Licencia'), (5, '2025-08-02', 'Presente'),
+(1, '2025-08-03', 'Ausente'), (2, '2025-08-03', 'Presente'), (3, '2025-08-03', 'Presente'), (4, '2025-08-03', 'Presente'), (5, '2025-08-03', 'Presente');
 
-(1, '2025-08-03', 'Ausente'),
-(2, '2025-08-03', 'Presente'),
-(3, '2025-08-03', 'Presente'),
-(4, '2025-08-03', 'Presente'),
-(5, '2025-08-03', 'Presente'),
+INSERT INTO Salarios (EmpleadoID, Monto, FechaPago) VALUES
+(1, 250000.00, '2025-07-31'), (2, 230000.00, '2025-07-31'), (3, 240000.00, '2025-07-31'), (4, 300000.00, '2025-07-31'), (5, 220000.00, '2025-07-31'),
+(1, 250000.00, '2025-08-31'), (2, 230000.00, '2025-08-31'), (3, 240000.00, '2025-08-31'), (4, 300000.00, '2025-08-31'), (5, 220000.00, '2025-08-31');
 
-(1, '2025-08-04', 'Presente'),
-(2, '2025-08-04', 'Presente'),
-(3, '2025-08-04', 'Tarde'),
-(4, '2025-08-04', 'Presente'),
-(5, '2025-08-04', 'Presente'),
+-- =========================================================================================
+-- SECCIÓN 6: GESTIÓN DE PROVEEDORES
+-- =========================================================================================
+INSERT INTO PedidosProveedores (ProveedorID, FechaPedido, Estado) VALUES
+(1, '2025-07-02', 'Pendiente'), (6, '2025-07-05', 'Completado'), (9, '2025-07-08', 'En tránsito'),
+(10, '2025-07-10', 'Pendiente'), (1, '2025-07-12', 'Completado');
 
-(1, '2025-08-05', 'Presente'),
-(2, '2025-08-05', 'Ausente'),
-(3, '2025-08-05', 'Presente'),
-(4, '2025-08-05', 'Presente'),
-(5, '2025-08-05', 'Presente');
+INSERT INTO DetallePedidoProveedor (PedidoProveedorID, ProductoID, Cantidad, PrecioUnitario) VALUES
+(1, 1, 20, 5500.00), (1, 2, 15, 6300.00),
+(2, 16, 12, 18000.00), (2, 17, 8, 7000.00),
+(3, 13, 5, 14000.00), (3, 14, 7, 8000.00),
+(4, 8, 10, 10000.00), (4, 9, 15, 2800.00),
+(5, 3, 10, 1400.00), (5, 4, 8, 1700.00);
 
-INSERT INTO Salarios (EmpleadoID, Monto, FechaPago)
-VALUES
-(1, 250000.00, '2025-07-31'),
-(2, 230000.00, '2025-07-31'),
-(3, 240000.00, '2025-07-31'),
-(4, 300000.00, '2025-07-31'),
-(5, 220000.00, '2025-07-31'),
+-- =========================================================================================
+-- SECCIÓN 7: SISTEMA, SEGURIDAD Y AUDITORÍA
+-- =========================================================================================
+INSERT INTO Roles (NombreRol) VALUES ('Vendedor'), ('Cajero'), ('Encargado'), ('Administrador');
 
-(1, 250000.00, '2025-08-31'),
-(2, 230000.00, '2025-08-31'),
-(3, 240000.00, '2025-08-31'),
-(4, 300000.00, '2025-08-31'),
-(5, 220000.00, '2025-08-31');
-
-INSERT INTO PedidosProveedores (ProveedorID, FechaPedido, Estado)
-VALUES
-(1, '2025-07-02', 'Pendiente'),
-(6, '2025-07-05', 'Completado'),
-(9, '2025-07-08', 'En tránsito'),
-(10, '2025-07-10', 'Pendiente'),
-(1, '2025-07-12', 'Completado'),
-(6, '2025-07-15', 'Pendiente'),
-(9, '2025-07-18', 'En tránsito'),
-(10, '2025-07-20', 'Completado'),
-(6, '2025-07-25', 'Pendiente'),
-(1, '2025-07-28', 'Completado');
-
-INSERT INTO DetallePedidoProveedor (PedidoProveedorID, ProductoID, Cantidad, PrecioUnitario)
-VALUES
--- Pedido 1 - Proveedor 1
-(1, 1, 20, 5500.00),
-(1, 2, 15, 6300.00),
-(1, 12, 10, 1600.00),
-
--- Pedido 2 - Proveedor 6
-(2, 5, 12, 18900.00),
-(2, 18, 8, 7200.00),
-
--- Pedido 3 - Proveedor 9
-(3, 4, 5, 14500.00),
-(3, 10, 7, 7000.00),
-(3, 16, 4, 8500.00),
-
--- Pedido 4 - Proveedor 10
-(4, 3, 10, 10500.00),
-(4, 8, 15, 3000.00),
-
--- Pedido 5 - Proveedor 1
-(5, 20, 18, 1900.00),
-(5, 42, 14, 1400.00),
-
--- Pedido 6 - Proveedor 6
-(6, 32, 9, 7500.00),
-(6, 37, 6, 8300.00),
-(6, 39, 4, 7200.00),
-
--- Pedido 7 - Proveedor 9
-(7, 28, 5, 7000.00),
-(7, 30, 8, 5500.00),
-
--- Pedido 8 - Proveedor 10
-(8, 24, 12, 3100.00),
-(8, 25, 10, 3300.00),
-(8, 26, 14, 2900.00),
-
--- Pedido 9 - Proveedor 6
-(9, 52, 5, 9500.00),
-(9, 54, 8, 7400.00),
-
--- Pedido 10 - Proveedor 1
-(10, 40, 20, 2100.00),
-(10, 41, 15, 2300.00),
-(10, 43, 18, 1600.00);
-
-INSERT INTO Cajas (NombreCaja, SaldoInicial, SaldoActual)
-VALUES 
-('Caja Principal', 50000.00, 50000.00),
-('Caja Secundaria', 20000.00, 20000.00);
-
-INSERT INTO MovimientosCaja (CajaID, FechaMovimiento, TipoMovimiento, Monto, Descripcion)
-VALUES
+INSERT INTO MovimientosCaja (CajaID, FechaMovimiento, TipoMovimiento, Monto, Descripcion) VALUES
 (1, '2025-08-01', 'Ingreso', 10000.00, 'Venta del día'),
 (1, '2025-08-02', 'Egreso', 5000.00, 'Pago a proveedores'),
 (2, '2025-08-01', 'Ingreso', 4000.00, 'Fondo inicial'),
 (2, '2025-08-03', 'Egreso', 2000.00, 'Compra de materiales');
+
+/********************************************************************************************
+* FIN DEL SCRIPT 02
+********************************************************************************************/
