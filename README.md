@@ -16,9 +16,7 @@ Diagrama Entidad-Relación (ERD)
 ![Diagrama de Base de Datos Estilo Urbano](https://raw.githubusercontent.com/MatiasCentofanti/Estilo_Urbano/main/docs/erd.png)
 
 Dashboard de Business Intelligence
-Inserta aquí la captura de tu dashboard.
-
-➡️ Ver Dashboard Interactivo en la Web Reemplaza esto con el enlace público que generaste desde Power BI.
+![Diagrama de Base de Datos Estilo Urbano](https://raw.githubusercontent.com/MatiasCentofanti/Estilo_Urbano/main/docs/Resumen_General.png)
 
 Características Técnicas
 Integridad de Datos: Uso de CONSTRAINTS (CHECK, UNIQUE) y claves primarias/foráneas para garantizar la consistencia de los datos.
